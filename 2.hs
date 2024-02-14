@@ -6,7 +6,4 @@ elemIndices x ys = findIndices x ys 0
         findIndices x (y:ys) i
             | x == y = i : findIndices x ys (i+1)
             | otherwise = findIndices x ys (i+1)
-
-main = do
-    print $ elemIndices 'a' "banana"
         

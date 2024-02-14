@@ -9,7 +9,3 @@ wordCount inputF outputF = do
     let wordsFrequencies = map (\x -> (x, length (filter (== x) wordsList))) uniqueWords
     let sortedWordsFrequencies =  sortBy (flip (comparing snd)) wordsFrequencies
     writeFile outputF (unlines (map (\(w, n) -> w ++ ": " ++ show n) sortedWordsFrequencies))
-
-main :: IO ()
-main = do
-    wordCount "input.txt" "output.txt"
